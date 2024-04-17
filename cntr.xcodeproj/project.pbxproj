@@ -7,6 +7,14 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		049015F32BCE6AF1004EF5B3 /* RxBlocking in Frameworks */ = {isa = PBXBuildFile; productRef = 049015F22BCE6AF1004EF5B3 /* RxBlocking */; };
+		049015F52BCE6AF1004EF5B3 /* RxBlocking-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 049015F42BCE6AF1004EF5B3 /* RxBlocking-Dynamic */; };
+		049015F72BCE6AF1004EF5B3 /* RxCocoa in Frameworks */ = {isa = PBXBuildFile; productRef = 049015F62BCE6AF1004EF5B3 /* RxCocoa */; };
+		049015F92BCE6AF1004EF5B3 /* RxCocoa-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 049015F82BCE6AF1004EF5B3 /* RxCocoa-Dynamic */; };
+		049015FB2BCE6AF1004EF5B3 /* RxRelay in Frameworks */ = {isa = PBXBuildFile; productRef = 049015FA2BCE6AF1004EF5B3 /* RxRelay */; };
+		049015FD2BCE6AF1004EF5B3 /* RxRelay-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 049015FC2BCE6AF1004EF5B3 /* RxRelay-Dynamic */; };
+		049015FF2BCE6AF1004EF5B3 /* RxSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 049015FE2BCE6AF1004EF5B3 /* RxSwift */; };
+		049016012BCE6AF1004EF5B3 /* RxSwift-Dynamic in Frameworks */ = {isa = PBXBuildFile; productRef = 049016002BCE6AF1004EF5B3 /* RxSwift-Dynamic */; };
 		38330C322BCD8EBA000357C8 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38330C312BCD8EBA000357C8 /* AppDelegate.swift */; };
 		38330C342BCD8EBA000357C8 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38330C332BCD8EBA000357C8 /* SceneDelegate.swift */; };
 		38330C362BCD8EBA000357C8 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38330C352BCD8EBA000357C8 /* ViewController.swift */; };
@@ -35,17 +43,33 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				049016012BCE6AF1004EF5B3 /* RxSwift-Dynamic in Frameworks */,
+				049015FB2BCE6AF1004EF5B3 /* RxRelay in Frameworks */,
+				049015F92BCE6AF1004EF5B3 /* RxCocoa-Dynamic in Frameworks */,
+				049015FD2BCE6AF1004EF5B3 /* RxRelay-Dynamic in Frameworks */,
+				049015F72BCE6AF1004EF5B3 /* RxCocoa in Frameworks */,
+				049015F32BCE6AF1004EF5B3 /* RxBlocking in Frameworks */,
+				049015F52BCE6AF1004EF5B3 /* RxBlocking-Dynamic in Frameworks */,
+				049015FF2BCE6AF1004EF5B3 /* RxSwift in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		049016062BCE6B63004EF5B3 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		38330C252BCD8EBA000357C8 = {
 			isa = PBXGroup;
 			children = (
 				38330C302BCD8EBA000357C8 /* cntr */,
 				38330C2F2BCD8EBA000357C8 /* Products */,
+				049016062BCE6B63004EF5B3 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -89,6 +113,16 @@
 			dependencies = (
 			);
 			name = cntr;
+			packageProductDependencies = (
+				049015F22BCE6AF1004EF5B3 /* RxBlocking */,
+				049015F42BCE6AF1004EF5B3 /* RxBlocking-Dynamic */,
+				049015F62BCE6AF1004EF5B3 /* RxCocoa */,
+				049015F82BCE6AF1004EF5B3 /* RxCocoa-Dynamic */,
+				049015FA2BCE6AF1004EF5B3 /* RxRelay */,
+				049015FC2BCE6AF1004EF5B3 /* RxRelay-Dynamic */,
+				049015FE2BCE6AF1004EF5B3 /* RxSwift */,
+				049016002BCE6AF1004EF5B3 /* RxSwift-Dynamic */,
+			);
 			productName = cntr;
 			productReference = 38330C2E2BCD8EBA000357C8 /* cntr.app */;
 			productType = "com.apple.product-type.application";
@@ -117,6 +151,9 @@
 				Base,
 			);
 			mainGroup = 38330C252BCD8EBA000357C8;
+			packageReferences = (
+				049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */,
+			);
 			productRefGroup = 38330C2F2BCD8EBA000357C8 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -373,6 +410,60 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/ReactiveX/RxSwift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 6.6.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		049015F22BCE6AF1004EF5B3 /* RxBlocking */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxBlocking;
+		};
+		049015F42BCE6AF1004EF5B3 /* RxBlocking-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxBlocking-Dynamic";
+		};
+		049015F62BCE6AF1004EF5B3 /* RxCocoa */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxCocoa;
+		};
+		049015F82BCE6AF1004EF5B3 /* RxCocoa-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxCocoa-Dynamic";
+		};
+		049015FA2BCE6AF1004EF5B3 /* RxRelay */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxRelay;
+		};
+		049015FC2BCE6AF1004EF5B3 /* RxRelay-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxRelay-Dynamic";
+		};
+		049015FE2BCE6AF1004EF5B3 /* RxSwift */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = RxSwift;
+		};
+		049016002BCE6AF1004EF5B3 /* RxSwift-Dynamic */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 049015F12BCE6AF1004EF5B3 /* XCRemoteSwiftPackageReference "RxSwift" */;
+			productName = "RxSwift-Dynamic";
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 38330C262BCD8EBA000357C8 /* Project object */;
 }
