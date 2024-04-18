@@ -1,32 +1,37 @@
-//
-//  ViewModel.swift
-//  cntr
-//
-//  Created by Yury Vozleev on 15.04.2024.
-//
-
-import Foundation
-
-class ViewModel: VM {
-    
-    var counter: Int {
-        set {
-            guard newValue >= 0, newValue <= 50 else { return }
-            _counter = newValue
-        }
-        get { _counter }
-    }
-    
-    @Bindable(value: 0)
-    private var _counter
-    
-    func bindCounter(_ handler: (@escaping (Int) -> ())) {
-        __counter.addHandler(handler)
-    }
-    
-}
+import RxSwift
 
 protocol VM {
-    var counter: Int { get set }
-    func bindCounter(_ handler: (@escaping (Int) -> ()))
+    var counter: BehaviorSubject<Int> { get set }
+    var bag: DisposeBag {get}
+    func incrementCounter(prevVal: String?)
+    func decrementCounter(prevVal: String?)
 }
+
+class ViewModel: VM {
+    private enum Constants {
+        static let minValue = 0
+        static let maxValue = 50
+    }
+    
+    var counter = BehaviorSubject<Int>(value: 0)
+    var bag = DisposeBag()
+    
+    func incrementCounter(prevVal: String?) {
+        guard let text = prevVal,  let currentVal = Int(text) else { return }
+        
+        let newVal = currentVal + 1
+        if newVal <= Constants.maxValue {
+            self.counter.onNext(newVal)
+        }
+    }
+    
+    func decrementCounter(prevVal: String?) {
+        guard let text = prevVal,  let currentVal = Int(text) else { return }
+        let newVal = currentVal - 1
+        if newVal >= Constants.minValue {
+            self.counter.onNext(newVal)
+        }
+    }
+}
+
+
