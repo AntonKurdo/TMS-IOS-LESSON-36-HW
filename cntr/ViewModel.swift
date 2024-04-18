@@ -3,8 +3,8 @@ import RxSwift
 protocol VM {
     var counter: BehaviorSubject<Int> { get set }
     var bag: DisposeBag {get}
-    func incrementCounter(prevVal: Int)
-    func decrementCounter(prevVal: Int)
+    func incrementCounter(prevVal: String?)
+    func decrementCounter(prevVal: String?)
 }
 
 class ViewModel: VM {
@@ -16,15 +16,18 @@ class ViewModel: VM {
     var counter = BehaviorSubject<Int>(value: 0)
     var bag = DisposeBag()
     
-    func incrementCounter(prevVal: Int) {
-        let newVal = prevVal + 1
+    func incrementCounter(prevVal: String?) {
+        guard let text = prevVal,  let currentVal = Int(text) else { return }
+        
+        let newVal = currentVal + 1
         if newVal <= Constants.maxValue {
             self.counter.onNext(newVal)
         }
     }
     
-    func decrementCounter(prevVal: Int) {
-        let newVal = prevVal - 1
+    func decrementCounter(prevVal: String?) {
+        guard let text = prevVal,  let currentVal = Int(text) else { return }
+        let newVal = currentVal - 1
         if newVal >= Constants.minValue {
             self.counter.onNext(newVal)
         }

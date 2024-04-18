@@ -16,13 +16,11 @@ class ViewController: UIViewController {
     }
 
     @IBAction func decrementCounter(_ sender: Any) {
-        guard let text = label.text,  let currentVal = Int(text) else { return }
-        vm.decrementCounter(prevVal: currentVal)
+        vm.decrementCounter(prevVal: label.text)
     }
     
     @IBAction func incrementCounter(_ sender: Any) {
-        guard let text = label.text,  let currentVal = Int(text) else { return }
-        vm.incrementCounter(prevVal: currentVal)
+        vm.incrementCounter(prevVal: label.text)
     }
 }
 
